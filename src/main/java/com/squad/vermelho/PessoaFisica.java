@@ -1,23 +1,27 @@
 package com.squad.vermelho;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class PessoaFisica extends Pessoa {
-    String cpf;
+    protected String cpf;
+    protected LocalDate dataNascimento;
 
-    public PessoaFisica(String nome,
-            String endereco,
-            Date nascimento,
-            String email,
-            String telefone,
-            String cpf)
-
-    {
-        this.nome = nome;
-        this.endereco = endereco;
-        this.nascimento = nascimento;
-        this.email = email;
-        this.telefone = telefone;
+    public PessoaFisica(String nome, String cpf, String email, String telefone, String endereco, LocalDate dataNascimento) {
+        super(nome, email, telefone, endereco);
         this.cpf = cpf;
+        this.dataNascimento = dataNascimento;
+    }
+
+    @Override
+    public String toString() {
+        return "{" 
+                    + "nome: " + this.nome + ", " 
+                    + "cpf: " + this.cpf + ", "
+                    + "datanascimento: " + this.dataNascimento + ", "
+                    + "telefone: " + this.telefone + ", "
+                    + "email: " + this.email + ", " 
+                    + "telefone: " + this.telefone + ", " 
+                    + "endereco: " + this.endereco + 
+                "}";
     }
 }
