@@ -1,23 +1,23 @@
 package com.squad.vermelho;
 
-import java.util.Date;
-
 public class PessoaJuridica extends Pessoa {
-    String cnpj;
 
-    PessoaJuridica(String nome,
-            String endereco,
-            Date nascimento,
-            String email,
-            String telefone,
-            String cnpj)
+    protected String cnpj;
 
-    {
-        this.nome = nome;
-        this.endereco = endereco;
-        this.nascimento = nascimento;
-        this.email = email;
-        this.telefone = telefone;
+    public PessoaJuridica(String nome, String cnpj, String email, String telefone, String endereco) {
+        super(nome, email, telefone, endereco);
         this.cnpj = cnpj;
+    }
+
+    @Override
+    public String toString() {
+        return "{" 
+                    + "nome: " + this.nome + ", " 
+                    + "cnpj: " + this.cnpj + ", "
+                    + "telefone: " + this.telefone + ", "
+                    + "email: " + this.email + ", " 
+                    + "telefone: " + this.telefone + ", " 
+                    + "endereco: " + this.endereco + 
+                "}";
     }
 }
