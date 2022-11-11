@@ -33,9 +33,23 @@ public class Frutas implements Produto {
         this.nome = nome;
     }
 
-    @Override
+    
     public void setPromocao(Double valorpromocao) {
         this.promocao = valorpromocao;
+    }
+
+
+    @Override
+    public int getQuantidade() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+
+    @Override
+    public void setQuantidade(int quantidade) {
+        // TODO Auto-generated method stub
+        
     }
     
 }
