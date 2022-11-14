@@ -36,4 +36,9 @@ public class Eletronicos implements Produto {
     public void setPromocao(Double valorpromocao) {
         this.promocao = valorpromocao;
     }
+
+    @Override
+    public Double getPromocao() {
+        return this.promocao;
+    }
 }
