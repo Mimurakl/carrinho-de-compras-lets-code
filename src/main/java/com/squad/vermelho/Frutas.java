@@ -33,7 +33,7 @@ public class Frutas implements Produto {
         this.nome = nome;
     }
 
-    @Override
+    
     public void setPromocao(Double valorpromocao) {
         this.promocao = valorpromocao;
     }
