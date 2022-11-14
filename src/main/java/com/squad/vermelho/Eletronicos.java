@@ -2,14 +2,12 @@ package com.squad.vermelho;
 
 public class Eletronicos implements Produto {
     private Double precoUnitario;
-    private int quantidade;
     private String nome;
     private Double promocao;
 
 
-    public Eletronicos(Double precoUnitario, int quantidade, String nome) {
+    public Eletronicos(Double precoUnitario, String nome) {
         this.precoUnitario = precoUnitario;
-        this.quantidade = quantidade;
         this.nome = nome;
         this.promocao = 1.0;
     }
@@ -35,7 +33,12 @@ public class Eletronicos implements Produto {
     }
 
     @Override
-    public void isPromocao(Double valorpromocao) {
+    public void setPromocao(Double valorpromocao) {
         this.promocao = valorpromocao;
+    }
+
+    @Override
+    public Double getPromocao() {
+       return this.promocao;
     }
 }
