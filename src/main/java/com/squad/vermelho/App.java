@@ -10,16 +10,17 @@ public class App {
                 LocalDate.of(1996, 10, 15));
         List<ItemCarrinho> carrinho = new ArrayList<>();
 
+        adicionaItem(carrinho,"teclado",50.00);
         adicionaItem(carrinho, "acerola", 12.20);
-        adicionaItem(carrinho, "Saquei", 12.20);
+        adicionaItem(carrinho, "mouse", 40.20);
         System.out.println(precoCarrinho(carrinho));
 
         listarItens(carrinho);
 
-        removeItem(carrinho, "Saquei");
+        removeItem(carrinho, "acerola");
         listarItens(carrinho);
 
-        System.out.println(p1);
+        System.out.println(precoCarrinho(carrinho));
     }
 
     public static Double precoCarrinho(List<ItemCarrinho> carrinho) {
