@@ -10,7 +10,4 @@ public interface Produto {
 
     public void setNome(String nome);
 
-    public void setPromocao(Double valorPromocao);
-
-    public Double getPromocao();
 }

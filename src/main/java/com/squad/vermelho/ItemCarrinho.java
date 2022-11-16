@@ -51,6 +51,10 @@ public class ItemCarrinho {
         if (frete != null) {
             this.precoTotalItem = this.precoTotalItem + frete.getValorFrete();
         }
+
+        if(taxaExtra != null){
+            this.precoTotalItem = this.precoTotalItem + taxaExtra.getValor();
+        }
     }
 
     public Double getPrecoTotalItem() {
