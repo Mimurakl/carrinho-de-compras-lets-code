@@ -1,4 +1,4 @@
-package com.squad.vermelho;
+package com.squad.vermelho.models;
 
 import java.util.ArrayList;
 import java.util.List;
