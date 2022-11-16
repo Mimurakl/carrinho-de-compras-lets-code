@@ -1,4 +1,4 @@
-package com.squad.vermelho;
+package com.squad.vermelho.models;
 
 public class Frete {
     private Double valorFrete = 10.00;

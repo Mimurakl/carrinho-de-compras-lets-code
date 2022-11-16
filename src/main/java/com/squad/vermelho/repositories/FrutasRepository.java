@@ -1,6 +1,8 @@
-package com.squad.vermelho;
+package com.squad.vermelho.repositories;
 
 import java.util.ArrayList;
+
+import com.squad.vermelho.models.Frutas;
 
 public class FrutasRepository {
     private ArrayList<Frutas> frutas;

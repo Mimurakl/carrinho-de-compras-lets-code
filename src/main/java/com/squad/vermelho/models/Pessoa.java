@@ -1,4 +1,4 @@
-package com.squad.vermelho;
+package com.squad.vermelho.models;
 
 import java.util.Date;
 import java.util.List;

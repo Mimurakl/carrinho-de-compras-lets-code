@@ -4,6 +4,15 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.squad.vermelho.models.Carrinho;
+import com.squad.vermelho.models.Frete;
+import com.squad.vermelho.models.ItemCarrinho;
+import com.squad.vermelho.models.PessoaFisica;
+import com.squad.vermelho.models.Promocao;
+import com.squad.vermelho.models.TaxaExtra;
+import com.squad.vermelho.repositories.EletronicsRepository;
+import com.squad.vermelho.repositories.FrutasRepository;
+
 public class App {
   public static void main(String[] args) {
 
