@@ -3,63 +3,39 @@ package com.squad.vermelho;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
 public class App {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        PessoaFisica p1 = new PessoaFisica("R2D2", "00431291", "r2d2@teste.com", "1625615", "Rua 121872, CASA 17682",
-                LocalDate.of(1996, 10, 15));
-        List<ItemCarrinho> carrinho = new ArrayList<>();
+    PessoaFisica p1 = new PessoaFisica("R2D2", "00431291", "r2d2@teste.com", "1625615", "Rua 121872, CASA 17682",
+        LocalDate.of(1996, 10, 15));
 
-        adicionaItem(carrinho,"teclado",50.00);
-        adicionaItem(carrinho, "acerola", 12.20);
-        adicionaItem(carrinho, "mouse", 40.20);
-        System.out.println(precoCarrinho(carrinho));
+        
+    ItemCarrinho item1 = new ItemCarrinho(new Frutas(12.00, "Acerola"), 2);
+    ItemCarrinho item2 = new ItemCarrinho(new Eletronicos(40.00, "teclado"), 1);
+    ItemCarrinho item3 = new ItemCarrinho(new Eletronicos(40.00, "teclado"), 1);
+    ItemCarrinho item4= new ItemCarrinho(new Eletronicos(40.00, "teclado"), 1);
 
-        listarItens(carrinho);
 
-        removeItem(carrinho, "acerola");
-        listarItens(carrinho);
+    item2.setPromocao(new Promocao("blackFriday", 0.1));
+    item3.setFrete(new Frete());
+    item4.setPromocao(new Promocao("promoday", 0.1));
+    item4.setFrete(new Frete());
+    item4.setTaxaExtra(new TaxaExtra(10.00));
 
-        System.out.println(precoCarrinho(carrinho));
-    }
+    Carrinho carrinho = new Carrinho(p1);
 
-    public static Double precoCarrinho(List<ItemCarrinho> carrinho) {
-        Double precoTotal = 0.00;
+    carrinho.adicionaItem(item1);
+    carrinho.adicionaItem(item2);
+    carrinho.adicionaItem(item3);
+    carrinho.adicionaItem(item4);
+    carrinho.alteraQuantidadeItem(item2,2);
+    carrinho.removeItem(item1);
 
-        for (ItemCarrinho item : carrinho) {
-            precoTotal += item.getPrecoUnitario() * item.getQuantidade();
-        }
-        return precoTotal;
-    }
+    carrinho.listarItens();
 
-    public static void listarItens(List<ItemCarrinho> carrinho) {
-        for (ItemCarrinho item : carrinho) {
-            System.out.println(item);
-        }
-        System.out.println("------------------------------------------------------");
-    }
+    System.out.println(carrinho.precoCarrinho());
 
-    public static void adicionaItem(List<ItemCarrinho> carrinho, String nome, Double preco) {
-        for (ItemCarrinho item : carrinho) {
+  }
 
-            if (item.getNome().equals(nome)) {
-                item.setQuantidade(item.getQuantidade() + 1);
-                return;
-            }
-        }
-        carrinho.add(new ItemCarrinho(preco, 1, nome));
-    }
-
-    public static void removeItem(List<ItemCarrinho> carrinho, String nome) {
-        for (ItemCarrinho item : carrinho) {
-            if (item.getNome().equals(nome)) {
-                item.setQuantidade(item.getQuantidade() - 1);
-            }
-            if (item.getQuantidade() == 0){
-                carrinho.remove(item);
-                break;
-            }
-        }
-
-    }
 }

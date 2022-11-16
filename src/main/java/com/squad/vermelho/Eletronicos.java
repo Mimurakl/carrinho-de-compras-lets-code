@@ -32,8 +32,4 @@ public class Eletronicos implements Produto {
         this.nome = nome;
     }
 
-    
-    public void setPromocao(Double valorpromocao) {
-        this.promocao = valorpromocao;
-    }
 }
