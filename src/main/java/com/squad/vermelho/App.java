@@ -10,11 +10,14 @@ public class App {
     PessoaFisica p1 = new PessoaFisica("R2D2", "00431291", "r2d2@teste.com", "1625615", "Rua 121872, CASA 17682",
         LocalDate.of(1996, 10, 15));
 
+    var eletronicoRepository = new EletronicsRepository();
+    var frutasRepository = new FrutasRepository();
+
         
-    ItemCarrinho item1 = new ItemCarrinho(new Frutas(12.00, "Acerola"), 2);
-    ItemCarrinho item2 = new ItemCarrinho(new Eletronicos(40.00, "teclado"), 1);
-    ItemCarrinho item3 = new ItemCarrinho(new Eletronicos(40.00, "teclado"), 1);
-    ItemCarrinho item4= new ItemCarrinho(new Eletronicos(40.00, "teclado"), 1);
+    ItemCarrinho item1 = new ItemCarrinho(frutasRepository.getFrutasPorNome("Maçã"), 2);
+    ItemCarrinho item2 = new ItemCarrinho(eletronicoRepository.getEletronicosPorNome("Mouse"), 1);
+    ItemCarrinho item3 = new ItemCarrinho(eletronicoRepository.getEletronicosPorNome("Headset"), 1);
+    ItemCarrinho item4= new ItemCarrinho(eletronicoRepository.getEletronicosPorNome("Monitor"), 1);
 
 
     item2.setPromocao(new Promocao("blackFriday", 0.1));
